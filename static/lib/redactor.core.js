@@ -147,6 +147,7 @@ define('redactor', [
                     'emoticons': '<i class="fa fa-smile-o"></i>',
                     'video': '<i class="fa fa-video-camera"></i>',
                     'file': '<i class="fa fa-upload"></i>',
+                    'fontcolor': '<i class="fa fa-fontcolor"></i>',
                     'table': '<i class="fa fa-table"></i>'
                 };
 
@@ -168,7 +169,7 @@ define('redactor', [
 
     // Redactor Options
     $.Redactor.opts.buttons.splice($.Redactor.opts.buttons.indexOf('lists'), 1, 'horizontalrule', 'ol', 'ul', 'indent', 'outdent');
-    $.Redactor.opts.plugins = ['video', 'table', 'topic_thumb', 'underline', 'emoticons', 'iconic'];
+    $.Redactor.opts.plugins = ['video', 'table', 'topic_thumb', 'underline', 'emoticons', 'iconic', 'fontcolor'];
     $.Redactor.opts.focusEnd = true;
     $.Redactor.opts.imageUpload = config.relative_path + '/api/post/upload';
     $.Redactor.opts.imageUploadParam = 'files[]';
