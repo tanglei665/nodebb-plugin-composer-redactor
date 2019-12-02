@@ -1,0 +1,36 @@
+.composer {
+	.write-container {
+		margin: 0;
+		margin-bottom: 1.5rem;
+		overflow: hidden;
+
+		.redactor-layer {
+			flex: 1;
+		}
+	}
+
+	.redactor-box {
+		flex: 2;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.redactor-editor {
+		flex: 2;
+	}
+
+	.title-container .title {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+
+.redactor-toolbar li a.re-topic_thumb {
+	display: none;
+}
+
+/* Safari bug.. */
+.composer {
+	user-select: initial;
+}

@@ -1,0 +1,32 @@
+{
+  "name": "nodebb-plugin-composer-redactor-payne",
+  "version": "0.0.114",
+  "description": "Redactor Composer for NodeBB",
+  "main": "library.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NodeBB/nodebb-plugin-composer-redactor"
+  },
+  "keywords": [
+    "nodebb",
+    "plugin",
+    "composer",
+    "redactor"
+  ],
+  "author": {
+    "name": "NodeBB Team",
+    "email": "sales@nodebb.org"
+  },
+  "license": "http://imperavi.com/redactor/license/",
+  "bugs": {
+    "url": "https://github.com/NodeBB/nodebb-plugin-composer-redactor/issues"
+  },
+  "readmeFilename": "README.md",
+  "nbbpm": {
+    "compatibility": "^1.9.4"
+  },
+  "dependencies": {
+    "async": "^2.6.2",
+    "sanitize-html": "^1.7.2"
+  }
+}
