@@ -6886,11 +6886,7 @@
                         }
 
 						var $styleTags = this.core.editor().find('*[style]');
-<<<<<<< HEAD
 						$styleTags.not('img, span, figure, iframe, #redactor-image-box, #redactor-image-editter, [data-redactor-style-cache], [data-redactor-span]' + filter).removeAttr('style');
-=======
-						$styleTags.not('img, figure, iframe, #redactor-image-box, #redactor-image-editter, [data-redactor-style-cache], [data-redactor-span]' + filter).removeAttr('style');
->>>>>>> 1fd887142e312e73108ea7c2ea02a3a6137df075
 
 						this.keydown.formatEmpty(e);
 						this.code.syncFire = true;
