@@ -98,7 +98,11 @@
 			</div>
 		</div>
 		<span class="write-container">
+<<<<<<< HEAD
 			<textarea id="content"></textarea>
+=======
+			<textarea></textarea>
+>>>>>>> 1fd887142e312e73108ea7c2ea02a3a6137df075
 		</span>
 
 	<!-- IF isTopic -->

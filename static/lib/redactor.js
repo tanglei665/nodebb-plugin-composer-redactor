@@ -5444,8 +5444,8 @@
 
                     this.placeholder.hide();
 					this.buffer.set();
-
 					(this.utils.isCollapsed()) ? this.inline.formatCollapsed(tag, params) : newPlugin ? this.inline.formatUncollapsed(tag, params, newPlugin) : this.inline.formatUncollapsed(tag, params);
+
 				},
 				formatCollapsed: function(tag, params)
 				{
@@ -5487,6 +5487,7 @@
                         newInline = this.inline.setParams(newInline, params);
     				}
 				},
+
 				formatUncollapsed: function(tag, params ,newPlugin)
 				{
     				this.selection.save(newPlugin);
@@ -5572,7 +5573,7 @@
 
 					return newNodes;
     			},
-               
+
                 isConvertableAttr: function(node, name, value)
                 {
 					var nodeAttrValue = $(node).attr(name);
@@ -5660,6 +5661,7 @@
                                 return true;
                             }	
 						}
+
                         else
                         {
                             return true;
@@ -5701,6 +5703,7 @@
                     return false;
     			},
     			setNodesStriked: function(nodes, tag, params ,newPlugin)
+
     			{
                     for (var i = 0; i < nodes.length; i++)
 					{
@@ -5708,7 +5711,6 @@
 
                         var parent = nodes[i].parentNode;
                         var parentTag = (parent && parent.tagName) ? parent.tagName.toLowerCase() : undefined;
-
                         var convertable = this.inline.isConvertable(parent, parentTag, tag, params ,newPlugin);
                         if (convertable)
                         {
@@ -5719,7 +5721,6 @@
 
                             $el.attr('data-redactor-inline-converted');
                         }
-
                         var convertable = this.inline.isConvertable(nodes[i], nodeTag, tag, params ,newPlugin);
                         if (convertable)
                         {
@@ -6885,7 +6886,11 @@
                         }
 
 						var $styleTags = this.core.editor().find('*[style]');
+<<<<<<< HEAD
 						$styleTags.not('img, span, figure, iframe, #redactor-image-box, #redactor-image-editter, [data-redactor-style-cache], [data-redactor-span]' + filter).removeAttr('style');
+=======
+						$styleTags.not('img, figure, iframe, #redactor-image-box, #redactor-image-editter, [data-redactor-style-cache], [data-redactor-span]' + filter).removeAttr('style');
+>>>>>>> 1fd887142e312e73108ea7c2ea02a3a6137df075
 
 						this.keydown.formatEmpty(e);
 						this.code.syncFire = true;
@@ -8352,6 +8357,7 @@
 						first.appendChild(range.extractContents());
     					range.insertNode(first);
 					}
+
 					try {
 						range.collapse(collapse);
 						range.insertNode(node);
