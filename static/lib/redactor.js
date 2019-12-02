@@ -2190,7 +2190,6 @@
 				},
 				addDropdown: function($btn, dropdown, other)
 				{
-					console.log($btn, dropdown, 'addDropdown')
 					if (this.opts.toolbar === false)
 					{
 						return;
@@ -2203,9 +2202,7 @@
 
 					var $dropdown = $('<div class="redactor-dropdown redactor-dropdown-' + this.uuid + ' redactor-dropdown-box-' + key + '" style="display: none;">');
 					if(other){
-						console.log($dropdown, '$dropdown')
 						$dropdown.append(dropdown)
-						console.log($dropdown, '$dropdown')
 						$btn.data('dropdown', $dropdown);
 					}else{
 						$btn.data('dropdown', $dropdown);
@@ -3877,12 +3874,9 @@
 				},
 				build: function(name, $dropdown, dropdownObject)
 				{
-					console.log(name, $dropdown, dropdownObject, 'dropdown.build')
 					dropdownObject = this.dropdown.buildFormatting(name, dropdownObject);
-					console.log(name, $dropdown, dropdownObject, 'font color init0')
 					$.each(dropdownObject, $.proxy(function(btnName, btnObject)
 					{
-						console.log(btnName, btnObject, 'font color init1')
 						var $item = this.dropdown.buildItem(btnName, btnObject);
 
 						this.observe.addDropdown($item, btnName, btnObject);
@@ -3997,12 +3991,6 @@
 						this.dropdown.hide();
 						return;
 					}
-
-					// re append
-					console.log(this.dropdown.button, 'appendTo')
-					console.log(this.dropdown.button.data, 'appendTo')
-					console.log(this.dropdown.button.data('dropdown'), 'appendTo')
-					console.log(this.dropdown.button.data('dropdown').appendTo(document.body))
 					this.dropdown.active = this.dropdown.button.data('dropdown').appendTo(document.body);
 
 					// callback
@@ -5431,7 +5419,7 @@
 		inline: function()
 		{
 			return {
-                format: function(tag, attr, value, type, newPlugin)
+                format: function(tag, attr, value, type, newPlugin, removeStyle)
 				{
     				// Stop formatting pre/code
 					if (this.utils.isCurrentOrParent(['PRE', 'CODE'])) return;
@@ -5444,7 +5432,12 @@
 
                     this.placeholder.hide();
 					this.buffer.set();
-					(this.utils.isCollapsed()) ? this.inline.formatCollapsed(tag, params) : newPlugin ? this.inline.formatUncollapsed(tag, params, newPlugin) : this.inline.formatUncollapsed(tag, params);
+					(this.utils.isCollapsed()) 
+					? this.inline.formatCollapsed(tag, params) 
+					: 
+						newPlugin 
+						? this.inline.formatUncollapsed(tag, params, newPlugin) 
+						: this.inline.formatUncollapsed(tag, params);
 
 				},
 				formatCollapsed: function(tag, params)
