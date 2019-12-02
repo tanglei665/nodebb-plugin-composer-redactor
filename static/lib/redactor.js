@@ -5435,9 +5435,11 @@
 					(this.utils.isCollapsed()) 
 					? this.inline.formatCollapsed(tag, params) 
 					: 
-						newPlugin 
-						? this.inline.formatUncollapsed(tag, params, newPlugin) 
-						: this.inline.formatUncollapsed(tag, params);
+						removeStyle
+							? this.inline.formatUncollapsed(tag, params, newPlugin, removeStyle)
+							: newPlugin 
+								? this.inline.formatUncollapsed(tag, params, newPlugin) 
+								: this.inline.formatUncollapsed(tag, params);
 
 				},
 				formatCollapsed: function(tag, params)
